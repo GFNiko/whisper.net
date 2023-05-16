@@ -357,3 +357,6 @@ MigrationBackup/
 /build
 /runtimes
 /nupkgs
+
+# changes made while bugfixing
+Whisper.net/Whisper.net.csproj

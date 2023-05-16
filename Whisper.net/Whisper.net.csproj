@@ -20,17 +20,8 @@
 		<None Include="..\readme.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 
-	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
-		<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+		<TargetFrameworks>net6.0</TargetFrameworks>
 	</PropertyGroup>
-
-	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX')) Or $([MSBuild]::IsOSPlatform('Windows'))">
-		<TargetFrameworks>
-			netstandard2.0;netstandard2.1;net6.0-ios;net6.0-tvos;net6.0-maccatalyst;net6.0-android</TargetFrameworks>
-	</PropertyGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
-	</ItemGroup>
 
 </Project>
